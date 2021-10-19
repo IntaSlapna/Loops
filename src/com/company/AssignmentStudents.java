@@ -6,7 +6,13 @@ import java.util.Arrays;
 public class AssignmentStudents {
     public static void main(String[] args) {
         byte[] gradesArr = new byte[10];
+        enterGrade(gradesArr);
+        countFailed(gradesArr);
+        countAgrades(gradesArr);
+        countStud(gradesArr);
+    }
 
+    public static void enterGrade (byte [] gradesArr) {
         int i = 0;
         int orderNum = 1;
 
@@ -24,15 +30,15 @@ public class AssignmentStudents {
             }
             //input.close(); //WTF, why it is red again?
         }
-
-
         System.out.println();
         System.out.println("You entered following grades:");
         for (int p = 0; p < gradesArr.length; p++) {
             System.out.println(gradesArr[p]);
         }
+    }
 
 
+    public static void countFailed (byte [] gradesArr) {
         System.out.println();
         int countMult = 0;
         for (int m = 0; m < gradesArr.length; m++) {
@@ -42,8 +48,9 @@ public class AssignmentStudents {
         }
         System.out.println(countMult != 0 ? "The number of students who failed equals: " + countMult :
                 "There is no students who failed");
+    }
 
-
+        public static void countAgrades (byte [] gradesArr) {
         System.out.println();
         int countMultA = 0;
         for (int a = 0; a < gradesArr.length; a++) {
@@ -54,7 +61,9 @@ public class AssignmentStudents {
         System.out.println(countMultA != 0 ? "The number of students who got grade A equals: " + countMultA :
                 "There is no students who got the grade A");
 
+    }
 
+    public static void countStud (byte [] gradesArr) {
         System.out.println();
         int gradehist = 0;
         while (gradehist <= 10) {
